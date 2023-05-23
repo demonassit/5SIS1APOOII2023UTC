@@ -44,8 +44,63 @@ public class manipularPrograma {
                 }
                 menu();
                 break;
+            case 2:
+                System.out.println("Ingrese el id del pukamon");
+                int idpersona = Integer.parseInt(entrada.nextLine());
+                System.out.println("Ingrese el nombre del pukamon");
+                String nombrepersona = entrada.nextLine();
+                System.out.println("Ingrese la edad del pukamon");
+                int edadpersonar = Integer.parseInt(entrada.nextLine());
+                
+                //guardarlo
+                Persona personaPukamon = 
+                        new Persona(idpersona, nombrepersona, edadpersonar);
+                //mando a llamar al metodo para guardar
+                control.agregarPersona(personaPukamon);
+                menu();
+                break;
+            case 3:
+                //primero debo de hacer una busqueda por el id
+                System.out.println("Ingrese el id del pukamon a buscar");
+                idpersona = Integer.parseInt(entrada.nextLine());
+                //creo mi objeto para buscar a una persona
+                Persona personaBuscar = control.buscarPersona(idpersona);
+                
+                System.out.println("La informacion del pukamon es: \n"
+                + "ID: " + personaBuscar.getId() + "\n"
+                + "Nombre: " + personaBuscar.getNombre()+ "\n"
+                + "Edad: " + personaBuscar.getEdad()+ "\n");
+                
+                //cambiarlos
+                System.out.println("Ingresa el nuevo nombre");
+                String nuevonombre = entrada.nextLine();
+                System.out.println("Ingresa la nueva edad:");
+                int nuevaedad = Integer.parseInt(entrada.nextLine());
+                
+                //envio los nuevos datos
+                personaBuscar.setNombre(nuevonombre);
+                personaBuscar.setEdad(nuevaedad);
+                
+                //actualizo
+                control.actualizarPersona(personaBuscar);
+                menu();
+                break;
+            case 4 :
+                System.out.println("Ingrese el id del pukamon a sacrificar");
+                idpersona = Integer.parseInt(entrada.nextLine());
+                //creo mi objeto para eliminar
+                Persona personaEliminar = control.buscarPersona(idpersona);
+                
+                //la peto
+                control.eliminarPersona(personaEliminar);
+                
+                System.out.println("Ese pukamon ya es libre");
+                menu();
+                break;
+                
             default:
-                throw new AssertionError();
+                System.out.println("Opcion no valida llegale");
+                break;
         }
     
     }

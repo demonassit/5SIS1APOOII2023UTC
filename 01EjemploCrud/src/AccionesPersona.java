@@ -61,6 +61,10 @@ public class AccionesPersona {
         listaPersonas.add(actualizar);
     }
     
+    public void eliminarPersona(Persona eliminar){
+        listaPersonas.remove(eliminar);
+    }
+    
     
     //ahi hacen los metodos de busqueda por nombre y appat
     
