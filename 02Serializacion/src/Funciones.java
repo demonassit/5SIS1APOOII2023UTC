@@ -86,7 +86,7 @@ public class Funciones {
         
     }
 
-    private void guardarProfesor() {
+    private void guardarProfesor() throws IOException {
        //agrego a la lista el objeto del profesor
        listaPersonas.add(profesor);
        guardar();
