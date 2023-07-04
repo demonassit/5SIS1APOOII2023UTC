@@ -47,7 +47,7 @@ public class Main {
         try{
             String resultado = task.get();
             //mando a llamar los datos de la tarea
-            nuevatarea.pedirDatos();
+            nuevatarea.pedirDatos(); 
             
             System.out.println("Obtener el valor de retorno : " + resultado);
             System.out.println("Fin del tiempo de ejecition del get :" + getNowTime());
